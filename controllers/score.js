@@ -1,6 +1,8 @@
+
+
 var ScrabbleScorer = {
   index: function(req, response, next) {
-    response.render('index', {title: 'express'})
+    response.render('index', {title: 'Scrabble Scorer'})
   },
 
   getChart: function(req, response, next) {
@@ -23,7 +25,7 @@ var ScrabbleScorer = {
   // pick a costume theme for your party
   locals.theme = costume[(Math.floor(Math.random() * costume.length))];
 
-  response.render('party', locals);
+  response.render('score', locals);
   }
 }
 

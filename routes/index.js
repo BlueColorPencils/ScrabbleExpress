@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var Controller = require('../controllers/score')
 
+ 
 /* GET home page. */
 router.get('/', Controller.index)
 // show cute img
-
 
 /* GET chart page. */
 router.get('/scrabble/chart', Controller.getChart)
