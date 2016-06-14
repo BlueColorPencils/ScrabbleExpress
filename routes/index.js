@@ -12,6 +12,7 @@ router.get('/scrabble/chart', Controller.getChart)
 
 /* GET score page. */
 router.get('/scrabble/score', Controller.getScore)
+router.post('/scrabble/score', Controller.getScore)
 
 /* POST score page. */
 // router.post('/scrabble/score', Controller.setScore)
