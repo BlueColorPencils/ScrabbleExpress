@@ -12,14 +12,22 @@ var ScrabbleScorer = {
 
   getScore: function (request, response) {
     var locals = {}
-    if (request.body.word) {
-      locals.word = scrabble.score(request.body.word);
-    } else {
-      locals.word = ""
-    }
-    // locals.word = request.body.word;
-    locals.title = 'Scorer';
+    locals.params = false;
 
+    if (request.body.word) {
+      locals.score = scrabble.score(request.body.word);
+      locals.word = request.body.word;
+    } else if (request.params.word !== undefined) {
+      // locals.score = scrabble.score(request.params.word);
+      locals.params = true;
+      locals.score = scrabble.score(request.params.word);
+      locals.word = request.params.word;
+    } else {
+      locals.score = "";
+      locals.word = "";
+    }
+    locals.title = 'Scorer';
+    // console.log(util.inspect(request, {showHidden: false, depth: null}));
   response.render('score', locals);
   }
 }

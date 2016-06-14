@@ -17,13 +17,19 @@
     </div>
 
 
-    <form action="" method="post">
-      <label>Word: </label>
-      <input type="text" name="word" value="" id="word" placeholder="word" required pattern="[A-Za-z]+">
+    <% if (!params) { %>
+      <form action="" method="post">
+        <label>Word: </label>
+        <input type="text" name="word" value="" id="word" placeholder="word" required pattern="[A-Za-z]+">
 
-      <input type="submit" value="Score">
-    </form>
+        <input type="submit" value="Score">
+      </form>
+    <% } %>
 
-    <%= word %>
+    <% if (score) { %>
+    <%= "Word: " + word %>
+    <br />
+    <%= "Score: " + score %>
+    <% } %>
   </body>
 </html>
