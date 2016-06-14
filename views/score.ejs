@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>A site to score words.</p>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li id="home"><a href="/">Home</a></li>
+          <li id="score"><a href="/scrabble/score">Scorer</a></li>
+          <li id="score"><a href="/scrabble/chart">Tile Chart</a></li>
+        </ul>
+    </div>
+
+
+    <form action="" method="post">
+      <label>Word: </label>
+      <input type="text" name="word" value="" id="word" placeholder="word" required pattern="[A-Za-z]+">
+
+      <input type="submit" value="Score">
+    </form>
+
+  </body>
+</html>
